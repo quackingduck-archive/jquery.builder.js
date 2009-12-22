@@ -20,5 +20,8 @@ n('div.container').n(function(n) {
   
   n('p').txt('The Paragraph. Clickable').
     click(function() { alert($(this).text()) });
+
+  n.txt("An abbreviation with title attribute: ");
+  n('abbr[title="JavaScript Object Notation"]').txt("JSON");
 });
 </script>

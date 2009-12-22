@@ -1,13 +1,14 @@
 (function($) {
   
-  var builderPattern = /^(.+?)(#.+?)?(\..+?)?$/;
+  var builderPattern = /^(.+?)(#.+?)?(\..+?)?(\[(.+?)\])?$/;
   
   function compileTag(str) {
     var match = str.match(builderPattern);
-    var tag = match[1], id = match[2], classes = match[3];
+    var tag = match[1], id = match[2], classes = match[3], attributes = match[5];
     id = id ? ' id="' + id.slice(1,id.length) + '"' : '';
     classes = classes ? ' class="' + classes.slice(1,classes.length).split('.').join(' ') + '"' : '';
-    return '<'+tag+id+classes+'>';
+    attributes = attributes ? ' ' + attributes.split(',').join(' ') + ' ' : '';
+    return '<'+tag+id+classes+attributes+'>';
   }
   
   $.n = function(tagStr) {
