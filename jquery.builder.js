@@ -16,7 +16,8 @@
   }
   
   $.fn.n = function(content) {
-    if (typeof content === 'string') return $.n(content).appendTo(this);    
+    if (typeof content === 'string') return $.n(content).appendTo(this);
+    if (typeof content === 'object') return content.appendTo(this);
     // otherwise assume content is a function
     var self = this;
     var builderFunction = function(contentStr) { return $.n(contentStr).appendTo(self) };
