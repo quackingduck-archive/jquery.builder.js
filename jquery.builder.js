@@ -18,11 +18,14 @@
   $.fn.n = function(content) {
     if (typeof content === 'string') return $.n(content).appendTo(this);
     if (typeof content === 'object') return content.appendTo(this);
-    // otherwise assume content is a function
-    var self = this;
-    var builderFunction = function(contentStr) { return $.n(contentStr).appendTo(self) };
+    var 
+    self = this,
+    builderFunction = function(content) { return self.n(content) };
     builderFunction.txt = function(str) { self.txt(str) };
-    builderFunction.element = this;
+    builderFunction.root = this;
+    if (content === undefined) return builderFunction;
+    // otherwise assume content is a function and pass the builder to that
+    // function
     content(builderFunction);
     return self;
   }
