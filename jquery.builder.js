@@ -1,3 +1,4 @@
+// http://github.com/quackingduck/jquery.builder.js/raw/master/jquery.builder.js
 (function($) {
   
   var builderPattern = /^(.+?)(#.+?)?(\..+?)?(\[(.+?)\])?$/;
