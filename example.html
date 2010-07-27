@@ -4,7 +4,7 @@
   <script src='vendor/jquery.js'></script>
   <script src='jquery.builder.js'></script>
   <style>
-  .head { background: #333; text-align: center; color: white; } 
+  .head { background: #333; text-align: center; color: white; }
   </style>
 </head>
 <body>
@@ -17,7 +17,7 @@ $.n('h1.head').txt('OH HAI!').appendTo(document.body);
 $(document.body).
 n('div.container').n(function(n) {
   n.txt('Lonely text node before the paragraph.');
-  
+
   n('p').txt('The Paragraph. Clickable').
     click(function() { alert($(this).text()) });
 
