@@ -9,7 +9,7 @@
     id = id ? ' id="' + id.slice(1,id.length) + '"' : '';
     classes = classes ? ' class="' + classes.slice(1,classes.length).split('.').join(' ') + '"' : '';
     attributes = attributes ? ' ' + attributes.split(',').join(' ') + ' ' : '';
-    return '<'+tag+id+classes+attributes+'>';
+    return '<'+tag+id+classes+attributes+'></'+tag+'>';
   }
   
   $.n = function(tagStr) {
